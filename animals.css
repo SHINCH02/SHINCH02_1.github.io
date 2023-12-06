@@ -1,0 +1,394 @@
+@charset "utf-8";
+
+
+.container{
+    width: 1500px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.wrapper{
+    width: 1300px;
+    margin: 0 auto;
+}
+
+
+h5{
+    margin-top: 5px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 8px;
+}
+
+h1{
+    color: #584421;
+
+}
+
+body {
+    background-color: #584421;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 660px;
+    z-index: -1;
+    opacity: 0.9;
+  }
+  
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    
+  }
+
+
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 74px;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.flex-box {
+    display: flex;
+}
+
+.gnb {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 1000px;
+    right: 0px;
+}
+
+.gnb a {
+    text-shadow: 1px 1px 2px rgb(83, 83, 83);
+}
+
+.gnb > li {
+    position: relative; /*기준점*/
+    padding: 10px;
+    right: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 13px;
+}
+
+.gnb > li::before {
+    position: absolute;
+    left: 0; top: 35px;
+    display: block;
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    box-shadow: 1px 1px 2px rgb(83, 83, 83);
+}
+
+.gnb > li:hover::before {
+    transform: scaleX(0.8);
+}
+
+/*===========wild==============*/
+
+section#wild{
+
+}
+
+
+.wild-list {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-column-gap: 50px;
+}
+
+.wild-list > div {
+}
+
+section#wild .outBox {
+    position: relative;
+    width: 400px;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+section#wild .inBox {
+    position: absolute;
+}
+
+.inBox > img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.wild-list div:hover .inBox {
+    transform: scale(1.07);
+    transition: 0.5s;
+}
+
+.wild-list div:not(:hover) .inBox {
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+
+.wild-txt{
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.wild-txt h5{
+    margin-top: 20px;
+}
+
+.wild-txt h4{
+    margin-top: 15px;
+}
+
+
+.wild1,
+.wild2,
+.wild3{
+    width: 380px;
+}
+
+
+/*===========pic==============*/
+
+section#pic{
+    margin-top: 200px;
+}
+
+
+.pic-list {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+
+}
+
+.pic-list > div {
+}
+
+section#pic .outBox {
+    position: relative;
+    width: 300px;
+    height: 315px;
+    overflow: hidden;
+    border-radius: 33px;
+}
+
+section#pic .inBox {
+    position: absolute;
+}
+
+section#pic .inBox > img {
+    width: 100%;
+    height: 100%;
+}
+
+.pic-list div:hover .inBox {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.pic-list div:hover .outBox {
+    transform: translateY(-20px);
+    transition: 0.4s;
+}
+
+.pic-list div:not(:hover) .outBox {
+    transform: translateY(0px);
+    transition: 0.5s;
+}
+
+.pic-imgbox{
+    position: relative;
+}
+
+.pic-txt h4{
+    font-size: 30px;
+}
+
+.pic-txt{
+    position: absolute;
+    bottom: 50px;
+    left: -10px;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(63, 63, 63);
+    opacity: 0;
+}
+
+.pic-imgbox:hover .pic-txt{
+    bottom: 50px;
+    left: 20px;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.pic-imgbox:hover .inBox{
+    opacity: 0.5;
+}
+
+.pic-imgbox:hover .outBox{
+    background-color: black;
+    transition: 0.5s;
+}
+
+
+
+/*===========meet==============*/
+
+section#meet{
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.meet-list {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-column-gap: 65px;
+}
+
+
+.meet-txt{
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+
+.meet1,
+.meet2,
+.meet3{
+    width: 380px;
+}
+
+
+.card {
+    width: 390px;
+    height: 530px;
+    /*        부모의 자식 요소가 3차원의 애니메이션 효과를 가질때, 300px의 거리에서 보는 원근감을 줌*/
+    perspective: 1000px;
+  }
+
+  .card img{
+    width: 390px;
+    height: 530px;
+  }
+
+  .card .item {
+    width: 390px;
+    height: 530px;
+    font-size: 35px;
+    /*카드의 뒷면을 안보이게 처리-카드가 뒤집히면 뒷면이 안보임*/
+    backface-visibility: hidden;
+    transition: 0.8s;
+  }
+
+  .card .item.front {
+    /* 앞면 카드가 부유하게 되어, 뒷면 카드가 아래에서 위로 올라감 -> 요소 두개가 겹치게 됨*/
+    position: absolute;
+    /* 명시적으로 기본값 설정, 없어도 됨*/
+    transform: rotateY(0deg);
+  }
+
+  .card:hover .item.front {
+    transform: rotateY(180deg);
+  }
+
+  .card .item.back {
+    /*y축을 중심으로 -180도 회전*/
+    transform: rotateY(-180deg);
+  }
+
+  .card:hover .item.back {
+    transform: rotateY(0deg);
+  }
+
+/*===========sns==============*/
+
+.sns {
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.sns h2 {
+    font-size: 40px;
+    color: #000;
+    margin-bottom: 10px;
+}
+.sns-list {
+    padding-top: 10px;
+    margin-bottom: 40px;
+}
+
+
+.sns-list img{
+    background-color: black;
+    border-radius: 80%;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    border: #584421 solid 0px;
+}
+
+.sns-list img:hover {
+    border: #584421 solid 6px;
+    background-color: #584421;
+    transition: 0.2s;
+
+}
+
+/*===========footer==============*/
+
+footer {
+    background-color: #a0a0a0;
+    padding: 50px;
+}
+
+footer a {
+    color: black;
+}
+
+
+.footer-logo img {
+    margin-right: 70px;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+.business-info,
+.business-info a,
+address,
+address a,
+.copyright {
+    font-size: 13px;
+}
+
+
+
